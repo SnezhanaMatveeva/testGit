@@ -33,7 +33,7 @@ public class SalesManager {
         long min = min();
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] != max && sales[i] != min) {
+            if (sales[i] != max && sales[i] != min) { // учитываются все max и min
                 sum = sum + sales[i];
                 quantity = quantity + 1;
             }
