@@ -28,22 +28,13 @@ public class SalesManager {
 
     public long truncatedMean() {
         long sum = 0;
-        long quantity = 0;
         long max = max();
         long min = min();
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] != max && sales[i] != min) { // учитываются все max и min
-                sum = sum + sales[i];
-                quantity = quantity + 1;
-            }
+            sum = sum + sales[i];
         }
 
-
-        long result=0;
-        if (quantity != 0) {
-            result = sum / quantity;
-        }
-        return result;
+        return (sum - max - min) / (sales.length - 2);
     }
 }
